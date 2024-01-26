@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator docs {
+  provider = "node node_modules/prisma-docs-generator"
+  output   = "./generated/docs"
+}
+
+model Chat {
+  id       Int     @id @default(autoincrement())
+  set_user String? @db.VarChar(255)
+  get_user String? @db.VarChar(255)
+  content  String? @db.VarChar(255)
+  status   String? @db.VarChar(255)
+  chat_id  Int?
+}
+
+model ChatList {
+  id       Int     @id @default(autoincrement())
+  get_user String? @db.VarChar(255)
+  set_user String? @db.VarChar(255)
+}
+
+model Disaster {
+  id          Int       @id @default(autoincrement())
+  json        String?   @db.VarChar(255)
+  province    String?   @db.VarChar(255)
+  city        String?   @db.VarChar(255)
+  district    String?   @db.VarChar(255)
+  create_time DateTime? @default(now())
+}
+
+model Expert {
+  id        Int     @id @default(autoincrement())
+  tip       String? @db.VarChar(255)
+  img       String? @db.VarChar(255)
+  introduce String? @db.VarChar(255)
+  education String? @db.VarChar(255)
+  school    String? @db.VarChar(255)
+  content   String? @db.VarChar(255)
+  status    String? @db.VarChar(255)
+  user_id   Int?
+}
+
+model Farm {
+  id           Int     @id @default(autoincrement())
+  name         String? @db.VarChar(255)
+  introduce    String? @db.VarChar(255)
+  city         String? @db.VarChar(255)
+  province     String? @db.VarChar(255)
+  district     String? @db.VarChar(255)
+  status       String? @db.VarChar(255)
+  user_id      Int?
+  area         String? @db.VarChar(255)
+  plant        String? @db.VarChar(255)
+  fill_color   String? @db.VarChar(255)
+  fill_opacity Float?
+  color        String? @db.VarChar(255)
+  weight       Float?
+  opacity      Float?
+  geojson      String? @db.VarChar(255)
+}
+
+model Map {
+  id       Int     @id @default(autoincrement())
+  json     String? @db.VarChar(255)
+  province String? @db.VarChar(255)
+  city     String? @db.VarChar(255)
+  district String? @db.VarChar(255)
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  img         String?   @db.VarChar(255)
+  phone       String?   @db.VarChar(255)
+  introduce   String?   @db.VarChar(255)
+  real_name   String?   @db.VarChar(255)
+  address     String?   @db.VarChar(255)
+  province    String?   @db.VarChar(255)
+  city        String?   @db.VarChar(255)
+  district    String?   @db.VarChar(255)
+  wx          String?   @db.VarChar(255)
+  qq          String?   @db.VarChar(255)
+  username    String?   @db.VarChar(255)
+  email       String?   @db.VarChar(255)
+  role        String?   @db.VarChar(255)
+  code        String?   @db.VarChar(255)
+  status      String?   @db.VarChar(255)
+  password    String?   @db.VarChar(255)
+  last_login  DateTime? @updatedAt
+  create_time DateTime? @default(now())
+}
+
+model Weather {
+  id          Int       @id @default(autoincrement())
+  json        String?   @db.VarChar(255)
+  province    String?   @db.VarChar(255)
+  city        String?   @db.VarChar(255)
+  district    String?   @db.VarChar(255)
+  create_time DateTime? @default(now())
+}

@@ -1,0 +1,32 @@
+{
+  "name": "farm-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./client/index.js",
+  "exports": {
+    ".": "./client/index.js"
+  },
+  "scripts": {
+    "migrate:dev": "prisma migrate dev",
+    "migrate:dev:create": "prisma migrate dev --create-only",
+    "prisma:migrate:deploy": "prisma migrate deploy",
+    "prisma:migrate:status": "prisma migrate status --preview-feature",
+    "prisma:migrate:resolve": "prisma migrate resolve --preview-feature",
+    "migrate:deploy": "prisma migrate deploy",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "prisma db seed",
+    "build": "prisma generate && tsc && cp -r client dist/client"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "prisma": "^5.9.1",
+    "prisma-docs-generator": "^0.8.0",
+    "prisma-json-types-generator": "^3.0.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
