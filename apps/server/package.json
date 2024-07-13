@@ -1,5 +1,5 @@
 {
-  "name": "farm-server",
+  "name": "editor-server",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -25,7 +25,6 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/platform-fastify": "^10.3.3",
     "class-validator": "^0.14.1",
-    "farm-prisma": "workspace:*",
     "mysql2": "^3.9.0",
     "redis": "^4.6.12",
     "reflect-metadata": "^0.1.13",
