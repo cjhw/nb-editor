@@ -78,7 +78,7 @@ cd ../../
 
 # @see https://github.com/typicode/husky/issues/914#issuecomment-826768549
 cd ${outputDir}
-pnpm install --prod
+pnpm install --prod --ignore-scripts
 cd ../
 
 echo "${outputDir} 打包完成"

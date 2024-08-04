@@ -3,7 +3,7 @@ import type { PostgresJsDatabase } from 'drizzle-orm/postgres-js'
 
 import type { SchemaType } from '@editor/schema'
 import { ConfigService } from '@nestjs/config'
-import { setupDB } from '@/common/db'
+import { setupDB } from '@/common/database/db'
 
 export const DB = Symbol('DB_SERVICE')
 export type DbType = PostgresJsDatabase<SchemaType>

@@ -15,9 +15,12 @@ services:
       depends_on:
         - db
         - redis
+      networks:
+        - editor
   db:
     restart: always
     image: postgres:16.3-alpine
+    container_name: postgresql-for-nb-editor
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -31,6 +34,8 @@ services:
       retries: 5
     ports:
       - 5433:5432
+    networks:
+      - editor
   testdb:
     image: postgres:16.3-alpine
     volumes:
@@ -41,20 +46,30 @@ services:
       POSTGRES_DB: editor_test
     ports:
       - 5480:5432
+    networks:
+      - editor
   redis:
     image: redis:7.4.0-alpine
+    container_name: redis-for-nb-editor
     restart: always
     volumes:
       - data:/var/lib/redis
     ports:
       - 6379:6379
+    networks:
+      - editor
   testRedis:
     image: redis:7.4.0-alpine
     volumes:
       - data:/var/lib/test-redis
     ports:
       - 6380:6379
+    networks:
+      - editor
 
 volumes:
   data:
     driver: local
+networks:
+  editor:
+    driver: bridge
