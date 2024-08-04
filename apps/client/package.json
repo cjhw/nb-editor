@@ -3,23 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "tsx dev-server.ts",
     "build": "next build",
-    "start": "next start",
+    "start": "tsx prod-server.ts",
+    "start:prod": "tsx prod-server.ts",
     "lint": "next lint",
-    "pm2": "pm2 start npm --name @editor/client -- start"
+    "pm2": "pm2 start npm --name @editor/client -- run start:prod"
   },
   "dependencies": {
+    "@editor/config": "workspace:^",
     "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/node": "^20.14.14",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4"
   }
 }

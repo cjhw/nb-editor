@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@editor/schema": "workspace:^",
+    "@editor/config": "workspace:^",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
