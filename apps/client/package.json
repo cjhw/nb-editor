@@ -6,7 +6,7 @@
     "dev": "tsx dev-server.ts",
     "build": "next build",
     "start": "tsx prod-server.ts",
-    "start:prod": "tsx prod-server.ts",
+    "start:prod": "cross-env NODE_ENV=production tsx prod-server.ts",
     "lint": "next lint",
     "pm2": "pm2 start npm --name @editor/client -- run start:prod"
   },
