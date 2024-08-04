@@ -8,7 +8,6 @@ RUN apk --no-cache add bash dos2unix \
     && find . -name "*.sh" -exec dos2unix {} \; \
     && apk del dos2unix
 RUN bash scripts/build.sh
-RUN ls /app/output/apps/client
 
 FROM node:20-alpine3.19 as prod
 COPY --from=builder /app/docker/* /app/docker/

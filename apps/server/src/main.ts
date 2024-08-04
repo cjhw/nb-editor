@@ -8,6 +8,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
   const config = app.get(ConfigService)
   const port = config.get('server.port') || 5002
-  await app.listen(port)
+  await app.listen(port).then(() => {
+    console.log(`server is running on port ${port}`)
+  })
 }
 bootstrap()

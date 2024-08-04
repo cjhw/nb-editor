@@ -15,10 +15,10 @@ server:
 # 数据库配置
 db:
   postgresql:
-    dbUrl: 'postgres://postgres:password@localhost:5433/editor'
+    dbUrl: 'postgres://postgres:password@postgresql-for-nb-editor:5433/editor'
     charset: 'utf8mb4'
     timezone: '+08:00'
     synchronize: true
   redis:
-    host: '127.0.0.1'
+    host: 'redis-for-nb-editor'
     port: '6379'
