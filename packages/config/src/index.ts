@@ -8,7 +8,7 @@ const FILE_ENV_NAME = {
   production: 'prod',
 } as const
 
-const env: keyof typeof FILE_ENV_NAME = process.env.NODE_ENV || 'development'
+const env = (process.env.NODE_ENV || 'development') as keyof typeof FILE_ENV_NAME
 
 export function getConfig() {
   const filePath = path.join(__dirname, '../../../config', `${FILE_ENV_NAME[env]}.yaml`)
