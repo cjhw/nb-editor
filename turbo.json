@@ -8,6 +8,6 @@
       "outputs": ["dist/**"]
     },
     "start": {},
-    "start:prod":{}
+    "start:prod": {}
   }
 }
