@@ -9,7 +9,6 @@ try {
     port,
   })
   console.log(`[nb-editor] 客户端已启动，端口：${port}`)
-}
-catch (err: any) {
+} catch (err: any) {
   console.log(`[nb-editor] 客户端启动失败！${err.message || err}`)
 }

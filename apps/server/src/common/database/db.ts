@@ -2,8 +2,7 @@ import { Logger } from '@nestjs/common'
 import type { LogWriter } from 'drizzle-orm'
 import { DefaultLogger } from 'drizzle-orm'
 import { drizzle } from 'drizzle-orm/postgres-js'
-import * as postgres from 'postgres'
-
+import postgres from 'postgres'
 import { schemas } from '@editor/schema'
 
 let connection: postgres.Sql
@@ -20,8 +19,7 @@ export async function endDB() {
 }
 
 export async function setupDB(config: Record<string, unknown> = {}) {
-  if (connection)
-    return
+  if (connection) return
 
   const logger = new Logger('DB')
 
@@ -36,8 +34,7 @@ export async function setupDB(config: Record<string, unknown> = {}) {
   try {
     connection = await createConnection(config)
     logger.log('Connected to DB Successfully')
-  }
-  catch (error) {
+  } catch (error) {
     logger.error(error)
   }
 
