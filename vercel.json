@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "nb-editor",
+  "builds": [
+    {
+      "src": "apps/server/dist/main.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/server/dist/main.js"
+    }
+  ]
+}
