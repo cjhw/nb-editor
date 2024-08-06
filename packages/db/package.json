@@ -15,8 +15,8 @@
     "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "@editor/schema": "workspace:^",
     "@editor/config": "workspace:^",
+    "@editor/schema": "workspace:^",
     "postgres": "^3.4.4"
   },
   "devDependencies": {

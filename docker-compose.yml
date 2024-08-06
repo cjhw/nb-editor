@@ -1,22 +1,22 @@
-version: "3.9"
+version: '3.9'
 
 services:
   nb-editor:
-      build:
-        context: .
-      image: nb-editor
-      container_name: nb-editor
-      volumes:
-        - ./runtime/static:/app/packages/server/static
-      expose:
-        - '5001-5003'
-      ports:
-        - '5001-5003:5001-5003'
-      depends_on:
-        - db
-        - redis
-      networks:
-        - editor
+    build:
+      context: .
+    image: nb-editor
+    container_name: nb-editor
+    volumes:
+      - ./runtime/static:/app/packages/server/static
+    expose:
+      - 5001-5003
+    ports:
+      - '5001-5003:5001-5003'
+    depends_on:
+      - db
+      - redis
+    networks:
+      - editor
   db:
     restart: always
     image: postgres:16.3-alpine
@@ -28,7 +28,7 @@ services:
     volumes:
       - data:/var/lib/postgres/main-data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      test: [CMD-SHELL, 'pg_isready -U ${POSTGRES_USER}']
       interval: 10s
       timeout: 5s
       retries: 5

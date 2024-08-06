@@ -2,26 +2,26 @@
   "name": "@editor/config",
   "version": "1.0.0",
   "description": "",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./lib/index.js",
       "require": "./lib/index.js"
     }
   },
-  "sideEffects": false,
-  "scripts": {
-    "build": "tsup"
-  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib",
     "src",
     "yaml"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "build": "tsup"
+  },
   "dependencies": {
     "js-yaml": "^4.1.0"
   },

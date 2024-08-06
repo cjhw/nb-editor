@@ -1,14 +1,14 @@
 # 开发环境配置
 client:
   port: 5001
-  assetPrefix: '/'
+  assetPrefix: /
   apiUrl: 'http://localhost:5002/api'
   collaborationUrl: 'ws://localhost:5003'
   siteUrl: 'http://localhost:5001'
   siteDomain: ''
 
 server:
-  prefix: '/api'
+  prefix: /api
   port: 5002
   collaborationPort: 5003
 
@@ -16,9 +16,9 @@ server:
 db:
   postgresql:
     dbUrl: 'postgres://postgres:password@postgresql-for-nb-editor:5433/editor'
-    charset: 'utf8mb4'
+    charset: utf8mb4
     timezone: '+08:00'
     synchronize: true
   redis:
-    host: 'redis-for-nb-editor'
+    host: redis-for-nb-editor
     port: '6379'
