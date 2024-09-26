@@ -8,11 +8,12 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./lib/index.js",
+      "import": "./lib/index.mjs",
       "require": "./lib/index.js"
     }
   },
   "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "types": "./lib/index.d.ts",
   "files": [
     "lib",
